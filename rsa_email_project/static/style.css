@@ -1,0 +1,21 @@
+    background-color: #f8f1e5;
+    border-left: 5px solid #b08d57;
+    padding: 20px;
+    border-radius: 8px;
+    color: #5a3c1b;
+}
+
+.output-box h3 {
+    font-size: 1.5rem;
+    font-weight: normal;
+    margin-bottom: 10px;
+}
+body {
+    background-image: url('https://www.transparenttextures.com/patterns/gplay.png');
+    background-color: #fdfaf6;
+    background-size: auto;
+    font-family: 'Georgia', serif;
+    color: #2d2d2d;
+    min-height: 100vh;
+    padding-top: 50px;
+}

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Decrypt Message</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h1>🔓 Decrypt Message</h1>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        {% for category, message in messages %}
+          <div class="alert {{ category }}">{{ message }}</div>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+
+    <form method="POST">
+      <textarea name="encrypted" rows="8" placeholder="Paste encrypted message here..." required></textarea>
+      <button type="submit" class="btn">Decrypt</button>
+    </form>
+
+    {% if decrypted %}
+      <div class="output-box">
+        <h3>✅ Decrypted Message:</h3>
+        <p>{{ decrypted }}</p>
+      </div>
+    {% endif %}
+
+    <a href="{{ url_for('home') }}" class="btn back-btn">← Back to Home</a>
+  </div>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Encrypt & Send</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h1>📧 Encrypt & Send Email</h1>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        {% for category, message in messages %}
+          <div class="alert {{ category }}">{{ message }}</div>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+
+    <form method="POST">
+      <input type="email" name="email" placeholder="Recipient Email" required>
+      <textarea name="message" rows="6" placeholder="Enter your message here..." required></textarea>
+      <button type="submit" class="btn">Encrypt & Send</button>
+    </form>
+
+    <a href="{{ url_for('home') }}" class="btn back-btn">← Back to Home</a>
+  </div>
+</body>
+</html>
